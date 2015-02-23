@@ -1,0 +1,23 @@
+#!/bin/bash
+ROOT="${PWD}/debroot"
+ARCH="amd64"
+MINORVERSION="0.1"
+VERSION="${MINORVERSION}.${BUILD_NUMBER}"
+
+make install DESTDIR="${ROOT}" PREFIX=/usr LIBDIR=/usr/lib
+fpm -s dir \
+    -t deb \
+    --name "lz4" \
+    --force \
+    -C "${ROOT}" \
+    -a "${ARCH}" \
+    --version "${}" \
+    --after-install "build/after-install" \
+    .
+
+DEB="${DEBNAME}_${VERSION}_${ARCH}.deb"
+
+if [[ -n "${DEPLOY}" ]]; then
+    mv "${DEB}" "/mnt/debs/"
+    cp "/mnt/debs/${DEB}" /opt/repropro-incoming-precise
+fi

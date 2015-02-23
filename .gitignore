@@ -1,0 +1,10 @@
+.ruby-*
+debroot/
+lib/liblz4.a
+lib/liblz4.pc
+lib/*.so
+lib/*.so.*
+lib/*.o
+programs/lz4
+programs/lz4c
+
