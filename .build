@@ -12,7 +12,7 @@ fpm -s dir \
     --force \
     -C "${ROOT}" \
     -a "${ARCH}" \
-    --version "${}" \
+    --version "${VERSION}" \
     --after-install "build/after-install" \
     .
 

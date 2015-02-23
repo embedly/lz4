@@ -7,4 +7,4 @@ lib/*.so.*
 lib/*.o
 programs/lz4
 programs/lz4c
-
+*.deb
