@@ -1,4 +1,5 @@
 #!/bin/bash
+DEBNAME="lz4"
 ROOT="${PWD}/debroot"
 ARCH="amd64"
 MINORVERSION="0.1"
