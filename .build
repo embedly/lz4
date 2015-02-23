@@ -20,5 +20,5 @@ DEB="${DEBNAME}_${VERSION}_${ARCH}.deb"
 
 if [[ -n "${DEPLOY}" ]]; then
     mv "${DEB}" "/mnt/debs/"
-    cp "/mnt/debs/${DEB}" /opt/repropro-incoming-precise
+    cp "/mnt/debs/${DEB}" /opt/reprepro-incoming-precise
 fi
