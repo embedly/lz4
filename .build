@@ -7,7 +7,8 @@ VERSION="${MINORVERSION}.${BUILD_NUMBER}"
 HADOOP_NATIVE="${ROOT}/mnt/hadoop/lib/native/"
 LIBDIR="${ROOT}/usr/lib"
 
-make install DESTDIR="${ROOT}" PREFIX=/usr LIBDIR="${LIBDIR}"
+rm -rf "${ROOT}/*"
+make install DESTDIR="${ROOT}" PREFIX=/usr LIBDIR=/usr/lib
 mkdir -p "${HADOOP_NATIVE}"
 cp -rf "${LIBDIR}/*" "${HADOOP_NATIVE}"
 
