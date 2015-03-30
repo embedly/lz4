@@ -4,8 +4,13 @@ ROOT="${PWD}/debroot"
 ARCH="amd64"
 MINORVERSION="0.1"
 VERSION="${MINORVERSION}.${BUILD_NUMBER}"
+HADOOP_NATIVE="${ROOT}/mnt/hadoop/lib/native/"
+LIBDIR="${ROOT}/usr/lib"
 
-make install DESTDIR="${ROOT}" PREFIX=/usr LIBDIR=/usr/lib
+make install DESTDIR="${ROOT}" PREFIX=/usr LIBDIR="${LIBDIR}"
+mkdir -p "${HADOOP_NATIVE}"
+cp -rf "${LIBDIR}/*" "${HADOOP_NATIVE}"
+
 fpm -s dir \
     -t deb \
     --name "lz4" \
