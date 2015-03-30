@@ -10,7 +10,7 @@ LIBDIR="${ROOT}/usr/lib"
 rm -rf "${ROOT}/*"
 make install DESTDIR="${ROOT}" PREFIX=/usr LIBDIR=/usr/lib
 mkdir -p "${HADOOP_NATIVE}"
-cp -rf "${LIBDIR}/*" "${HADOOP_NATIVE}"
+cp -r "${LIBDIR}/*" "${HADOOP_NATIVE}"
 
 fpm -s dir \
     -t deb \
